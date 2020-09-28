@@ -1,0 +1,16 @@
+{
+  "name": "holydate",
+  "version": "1.0.0",
+  "description": "A generated holiday from your country",
+  "main": "main.js",
+  "bin" : "./main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JackRob",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "country-list": "^2.2.0"
+  }
+}
