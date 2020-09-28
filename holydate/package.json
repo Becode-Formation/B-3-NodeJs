@@ -1,5 +1,5 @@
 {
-  "name": "holydate",
+  "name": "@gr0b/holydate",
   "version": "1.0.0",
   "description": "A generated holiday from your country",
   "main": "main.js",

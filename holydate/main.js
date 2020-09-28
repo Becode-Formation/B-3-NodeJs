@@ -12,7 +12,8 @@ const chalk = require('chalk')
 const date = new Date();
 const year = String(date.getFullYear())
 
-let country = listCountry.getCode('Belgium')
+let userCountry = String(process.argv.slice(2))
+let country = listCountry.getCode(userCountry)
 
 //Get the API
 let getAPI =() =>{
@@ -20,16 +21,19 @@ let getAPI =() =>{
       load.start()
       axios.get(`https://date.nager.at/api/v2/publicholidays/${year}/${country}`)
       .then(res => {
+            load.stop()
             let holidays = res.data
             holidays.forEach(elt => {
                   let date = chalk.blue.italic(elt.date)
                   let name = chalk.yellow.bold(elt.name)
-                  return load.text = console.log(`${name} le ${date}.`)
+                  return console.log(`${name} le ${date}.`)
                   // console.log(`${name} le ${date}.`)
             });
-            load.stop()
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+            load.stop()
+            console.log(err)
+      })
 }
 
 getAPI()
