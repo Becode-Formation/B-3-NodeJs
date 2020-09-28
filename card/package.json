@@ -1,9 +1,11 @@
 {
-  "name": "card",
+  "name": "gr0b",
   "version": "1.0.0",
   "description": "",
   "main": "card.js",
-  "bin": "./card.js",
+  "bin": {
+    "gr0b" : "./card.js"
+  },
   "dependencies": {
     "boxen": "^4.2.0",
     "chalk": "^4.1.0",
